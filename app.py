@@ -18,10 +18,24 @@ mydb = mysql.connector.connect(
 
 mycursor = mydb.cursor(buffered=True)
 
-@app.route('/index',methods=['POST','GET'])
+@app.route('/',methods=['POST','GET'])
 def home0():
-    print("ENTERED")
+    print("ENTERED1")
     return render_template('index.html')
 
+@app.route('/login',methods=['POST','GET'])
+def login0():
+    print("ENTERED2")
+    return render_template('login.html')
 
+@app.route('/signin',methods=['POST','GET'])
+def signin0():
+    print("ENTERED3")
+    return render_template('signin.html')   
 
+@app.route('/forgetPassoword',methods=['POST','GET'])
+def forgetpass0():
+    print("ENTERED4")
+    return render_template('forgetPass.html')       
+
+app.run(debug=True)
