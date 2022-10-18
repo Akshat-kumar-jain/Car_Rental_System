@@ -21,6 +21,10 @@ mycursor = mydb.cursor(buffered=True)
 @app.route('/',methods=['POST','GET'])
 def home0():
     print("ENTERED1")
+    session['fromlogin']=''
+    session['city']=''
+    session['ssid']=''
+    session['cname']=''
     return render_template('index.html')
 
 @app.route('/login',methods=['POST','GET'])
@@ -31,6 +35,11 @@ def login0():
 @app.route('/signin',methods=['POST','GET'])
 def signin0():
     print("ENTERED3")
+    r=dict(request.form)
+    print(r)
+    global mydb
+    global mycursor
+    r['n']   
     return render_template('signin.html')   
 
 @app.route('/forgetPassoword',methods=['POST','GET'])
